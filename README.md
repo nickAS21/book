@@ -113,11 +113,17 @@ phoneDocker * virtualbox Running tcp: //192.168.99.100: 2376 v19.03.3
 ```
 5.) work in docker:
 5.1) - start of the ssh console (VM starts in parallel)
+```
 $ docker-machine ssh phoneDocker
+```
 5.2) - check the running image:
+```
 $ docker ps
+```
 5.3) output of all old image-name
+```
 $ docker ps -a
+```
 5.4) deleting the old image of all
 ```
 $ docker rm $ (docker ps -a -q -f status = exited)
