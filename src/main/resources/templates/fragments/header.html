@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <div>
+        <!-- this is header-jQuery&bootstrap -->
+<!--        <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>-->
+        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--        <script src="../../js/jquery.alerts.js"></script>-->
+        </div>
+        <div th:fragment="header-css">
+            <!-- this is header-css -->
+            <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+            <link rel="stylesheet" href="../../css/main.css"/>
+<!--            <link rel="stylesheet" href="../../css/jquery.alerts.css" />-->
+    </div>
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Phonebook</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{/home}">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{/login}">Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{/register}">Registration</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{/about}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

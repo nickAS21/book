@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="../../alert/jAlert.css"/>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"/>
+<div class="container">
+    <div class="starter-template">
+        <h1>User Contact</h1>
+        <span sec:authorize="isAuthenticated()">
+<!--                <h1 th:inline="text">Hello  <span sec:authentication="name" !></span> </h1>-->
+            <!-- /.container -->
+                <div class="container">
+                    <div>
+<!--                        <h2 th:inline="text">User</h2>-->
+                        <h4>
+                            <label for="login">Login</label><input type="text" th:value="${userForm.login}" id="login"
+                                                                   disabled>
+                            <label for="pib">P_I_B</label><input type="text" th:value="${userForm.pib}" id="pib"
+                                                                 disabled></br></br>
+                        </h4>
+                    </div>
+                    <!--  dataTable table table-striped: this is  style table   -->
+                    <!--  id="contactstbl": sunction in /js/contacts.js   -->
+                    <table id="contactstbl" cellpadding="0" cellspacing="0" border="0"
+                           class="dataTable table table-striped"> </table>
+                </div>
+            </span>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+<script src="/js/dataTables.altEditor.free.js"></script>
+<!--    <script src="../../js/jquery.alerts.js"></script>-->
+<script src="../../alert/jAlert.js"></script>
+<script src="../../alert/jAlert-functions.js"></script>
+<!--  /js/contacts.js:   => $('#contactstbl')-->
+<script src="/js/contacts.js"></script>
+</body>
+</html>
